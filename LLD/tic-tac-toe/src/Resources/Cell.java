@@ -1,9 +1,9 @@
 package src.Resources;
 
 public class Cell {
-    int row;
-    int col;
-    Symbol symbol;
+    private final int row;
+    private final int col;
+    private Symbol symbol;
 
     public Cell(int row, int col) {
         this.col = col;
@@ -20,13 +20,6 @@ public class Cell {
         return true;
     }
 
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
 
     public Symbol getSymbol() {
         return symbol;
@@ -34,13 +27,5 @@ public class Cell {
 
     public void setSymbol(Symbol symbol) {
         this.symbol = symbol;
-    }
-
-    public int getCol() {
-        return col;
-    }
-
-    public void setCol(int col) {
-        this.col = col;
     }
 }

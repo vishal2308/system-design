@@ -1,8 +1,8 @@
 package src.Resources;
 
 public class Board {
-    public int size;
-    public Cell[][] grid;
+    private final int size;
+    private final Cell[][] grid;
 
     public Board (int size) {
         this.size = size;
@@ -40,15 +40,4 @@ public class Board {
         return size;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public Cell[][] getGrid() {
-        return grid;
-    }
-
-    public void setGrid(Cell[][] grid) {
-        this.grid = grid;
-    }
 }

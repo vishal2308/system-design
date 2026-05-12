@@ -1,5 +1,6 @@
 package src.Service;
 
+import src.Exceptions.InvalidStateException;
 import src.Resources.*;
 import src.Strategy.Move.HumanMoveStrategy;
 import src.Strategy.Win.NormalWinStrategy;
@@ -16,15 +17,12 @@ public class Main {
 
         Game game = new Game(players, new NormalWinStrategy(3), 3);
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                try {
-                    game.makeMove(0 , 0);
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
+        while (game.getState() == States.IN_PROGRESS) {
+            try {
+                game.play();
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
         }
-
     }
 }
